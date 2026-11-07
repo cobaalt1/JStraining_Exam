@@ -3,32 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 18</title>
+    <title>Révision JavaScript - Exercice 19</title>
 </head>
 <body>
 
-    <input id="prenom" type="text" placeholder="Ton prénom">
+    <p id="compteur">Nombre de clics : 0</p>
 
-    <button id="valider">Valider</button>
-
-    <p id="resultat"></p>
+    <button id="incrementer">Clique-moi</button>
 
     <script>
+        // Déclare une variable pour stocker le nombre de clics
+        let i = 0;
+
         // Sélection des éléments HTML
-        const prenom = document.querySelector("#prenom");
-        const valider = document.querySelector("#valider");
-        const resultat = document.querySelector("#resultat");
+        const cmpt = document.querySelector("#compteur");
+        const btn = document.querySelector("#incrementer");
 
         // Écoute du clic sur le bouton
-        valider.addEventListener("click", function() {
+        btn.addEventListener("click", function() {
 
-            // Vérifie si le champ prénom est vide
-            if (prenom.value == "") {
-                resultat.textContent = "Vous devez entrer votre prénom bratan !";
-            } else {
-                // Affiche un message avec le prénom saisi
-                resultat.textContent = "Bonjour ! " + prenom.value;
-            }
+            // Incrémente le compteur de 1
+            i = i + 1;
+
+            // Actualise le texte affiché dans le paragraphe
+            cmpt.textContent = "Nombre de clics : " + i;
 
         });
     </script>
