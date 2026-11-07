@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 8</title>
+    <title>Révision JavaScript - Exercice 9</title>
 </head>
 <body>
 
-    <button id="Monbouton">Clique-moi</button>
+    <h1 id="title">Mon titre</h1>
+
+    <p id="paragraphe">Voici un paragraphe.</p>
+
+    <button id="Monbouton">Modifier le contenu</button>
 
     <script>
-        // Sélectionne le bouton grâce à son identifiant
-        const bouton = document.querySelector("#Monbouton");
+        // Sélection des éléments HTML
+        const titre = document.querySelector("#title");
+        const msg = document.querySelector("#paragraphe");
+        const btn = document.querySelector("#Monbouton");
 
-        // Écoute l'événement de clic sur le bouton
-        bouton.addEventListener("click", function() {
+        // Écoute du clic sur le bouton
+        btn.addEventListener("click", function() {
 
-            // Affiche un message dans la console lors du clic
-            console.log("Tu as cliqué sur le bouton");
+            // Modification du texte du paragraphe
+            msg.textContent = "Le texte a été modifié !";
+
+            // Modification de la couleur du titre
+            titre.style.color = "red";
 
         });
     </script>
