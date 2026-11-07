@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 7</title>
+    <title>Révision JavaScript - Exercice 8</title>
 </head>
 <body>
 
-    <script>
-        // Déclaration d'un objet représentant une voiture
-        const voiture = {
-            marque: "BMW",
-            modele: "Serie 1",
-            annee: 2014
-        };
+    <button id="Monbouton">Clique-moi</button>
 
-        // Affiche la marque de la voiture dans la console
-        console.log(voiture.marque);
+    <script>
+        // Sélectionne le bouton grâce à son identifiant
+        const bouton = document.querySelector("#Monbouton");
+
+        // Écoute l'événement de clic sur le bouton
+        bouton.addEventListener("click", function() {
+
+            // Affiche un message dans la console lors du clic
+            console.log("Tu as cliqué sur le bouton");
+
+        });
     </script>
 
 </body>
