@@ -3,47 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 22</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        #message {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: black;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .contenu {
-            height: 2000px;
-            padding-top: 100px;
-        }
-    </style>
+    <title>Révision JavaScript - Exercice 23</title>
 </head>
 <body>
 
-    <p id="message">Tu es en haut de la page !</p>
+    <h1>Parcourir un tableau avec forEach()</h1>
 
-    <div class="contenu">
-        <h1>Fais défiler la page !</h1>
-        <p>Descends de plus de 300 pixels pour déclencher le changement.</p>
-    </div>
+    <p>Ouvre la console pour voir les résultats.</p>
 
     <script>
-        const msg = document.querySelector("#message")
-        window.addEventListener("scroll", function(){
-            if(window.scrollY < 300){
-                msg.textContent = "Tu es en haut de la page !"
-            }else{
-                msg.textContent = "Tu as dépassé les 300 pixels !"
-            }
-        })
+        const tabPrenom = ["Maxence","Lucas","Thomas","Julie"]
+
+        tabPrenom.forEach(prenom => {
+            console.log(prenom)
+        });
     </script>
 
 </body>
