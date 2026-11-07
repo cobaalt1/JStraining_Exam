@@ -3,36 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 11</title>
+    <title>Révision JavaScript - Exercice 12</title>
 
     <style>
-        .active {
-            color: red;
-            font-weight: bold;
+        /* Cache l'élément lorsqu'il possède cette classe */
+        .cache {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <p id="message">Bonjour !</p>
+    <p id="message" class="cache">Bonjour !</p>
 
-    <button id="ajouter">Ajouter la classe</button>
-    <button id="supprimer">Supprimer la classe</button>
+    <button id="afficher">Afficher le message</button>
 
     <script>
         // Sélection des éléments HTML
+        const btn = document.querySelector("#afficher");
         const msg = document.querySelector("#message");
-        const ajouter = document.querySelector("#ajouter");
-        const supprimer = document.querySelector("#supprimer");
 
-        // Ajoute la classe CSS au clic
-        ajouter.addEventListener("click", function() {
-            msg.classList.add("active");
-        });
+        // Écoute du clic sur le bouton
+        btn.addEventListener("click", function() {
 
-        // Supprime la classe CSS au clic
-        supprimer.addEventListener("click", function() {
-            msg.classList.remove("active");
+            // Ajoute ou retire la classe "cache"
+            msg.classList.toggle("cache");
+
         });
     </script>
 
