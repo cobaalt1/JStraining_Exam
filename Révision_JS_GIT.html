@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 19</title>
+    <title>Révision JavaScript - Exercice 20</title>
 </head>
 <body>
 
     <p id="compteur">Nombre de clics : 0</p>
 
     <button id="incrementer">Clique-moi</button>
+    <button id="reset">Réinitialiser</button>
 
     <script>
         // Déclare une variable pour stocker le nombre de clics
@@ -18,14 +19,26 @@
         // Sélection des éléments HTML
         const cmpt = document.querySelector("#compteur");
         const btn = document.querySelector("#incrementer");
+        const reset = document.querySelector("#reset");
 
-        // Écoute du clic sur le bouton
+        // Écoute du clic sur le bouton d'incrémentation
         btn.addEventListener("click", function() {
 
             // Incrémente le compteur de 1
             i = i + 1;
 
-            // Actualise le texte affiché dans le paragraphe
+            // Actualise le nombre affiché
+            cmpt.textContent = "Nombre de clics : " + i;
+
+        });
+
+        // Écoute du clic sur le bouton de réinitialisation
+        reset.addEventListener("click", function() {
+
+            // Remet le compteur à zéro
+            i = 0;
+
+            // Actualise l'affichage
             cmpt.textContent = "Nombre de clics : " + i;
 
         });
