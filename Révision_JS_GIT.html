@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 24 - String</title>
+    <title>Exercice 25 - String includes</title>
 </head>
-
-<!-- Objectif
-Apprendre à récupérer la longueur d'une chaîne et à modifier sa casse.
-
-Consignes :
-1. Déclare une constante phrase contenant : "JavaScript est un langage puissant".
-2. Affiche le nombre de caractères avec .length.
-3. Affiche la phrase en majuscules avec .toUpperCase().
-4. Affiche la phrase en minuscules avec .toLowerCase(). -->
 
 <body>
 
-    <h1>Manipulation des chaînes de caractères</h1>
+    <h1>Rechercher du texte avec includes()</h1>
+
+    <p id="phrase">J'apprends JavaScript et PHP avec plaisir</p>
 
     <p>Ouvre la console pour voir les résultats.</p>
 
     <script>
+        const phrase = document.querySelector("#phrase");
 
-        const phrase = "JavaScript est un langage puissant"
+        if (phrase.textContent.includes("JavaScript")) {
+            console.log("La phrase contient le mot 'JavaScript'");
+        } else {
+            console.log("La phrase ne contient pas le mot recherché");
+        }
 
-        console.log(phrase.length,phrase.toUpperCase(),phrase.toLowerCase())
-
+        if (phrase.textContent.includes("PHP")) {
+            console.log("La phrase contient le mot 'PHP'");
+        } else {
+            console.log("La phrase ne contient pas le mot recherché");
+        }
     </script>
 
 </body>
