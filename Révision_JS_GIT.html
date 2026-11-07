@@ -4,30 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 26 - String slice</title>
+    <title>Exercice 27 - String replace</title>
 </head>
 
-<!-- Objectif : apprendre à extraire une partie d'une chaîne de caractères avec slice().
+<!-- Objectif : apprendre à remplacer du texte dans une chaîne de caractères avec replace().
 
 Consignes :
-1. Déclare une constante phrase contenant : "JavaScript est vraiment intéressant".
-2. Utilise slice() pour récupérer uniquement le mot "JavaScript".
+1. Déclare une constante phrase contenant : "J'apprends PHP et PHP est intéressant".
+2. Utilise replace() pour remplacer la première occurrence de "PHP" par "JavaScript".
 3. Affiche le résultat dans la console.
-4. Utilise une deuxième fois slice() pour récupérer le mot "intéressant".
-Attention : slice(debut, fin) commence à l'index de début et s'arrête juste avant l'index de fin. -->
+4. Affiche également la phrase originale dans la console.
+
+Attention : replace() retourne une nouvelle chaîne de caractères. Il ne modifie pas la chaîne originale. -->
 
 <body>
 
-    <h1>Extraire du texte avec slice()</h1>
+    <h1>Remplacer du texte avec replace()</h1>
 
     <p>Ouvre la console pour voir les résultats.</p>
 
     <script>
-        const phrase = "JavaScript est vraiment intéressant"
-        console.log(phrase)
+        const phrase = "J'apprends PHP et PHP est intéressant"
 
-        console.log(phrase.slice(0,10))
-        console.log(phrase.slice(24,36))
+        console.log(phrase)
+        console.log(phrase.replace("PHP", "JavaScript"))
     </script>
 
 </body>
