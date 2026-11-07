@@ -3,31 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 15</title>
-
-    <style>
-        /* Masque l'élément HTML */
-        .cache {
-            display: none;
-        }
-    </style>
+    <title>Révision JavaScript - Exercice 16</title>
 </head>
 <body>
 
-    <p id="message" class="cache">Bonjour !</p>
+    <img id="photo" src="chat.jpg" alt="Un chat">
 
-    <button id="afficher">Afficher le message</button>
+    <button id="changer">Changer la photo</button>
 
     <script>
         // Sélection des éléments HTML
-        const btn = document.querySelector("#afficher");
-        const msg = document.querySelector("#message");
+        const img = document.querySelector("#photo");
+        const btn = document.querySelector("#changer");
 
         // Écoute du clic sur le bouton
         btn.addEventListener("click", function() {
 
-            // Bascule la classe "cache" pour afficher ou masquer le message
-            msg.classList.toggle("cache");
+            // Modifie la source de l'image
+            img.src = "chien.jpg";
 
         });
     </script>
