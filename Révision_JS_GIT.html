@@ -3,43 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 20</title>
+    <title>Révision JavaScript - Exercice 21</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #position {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: black;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .contenu {
+            height: 2000px;
+            padding-top: 100px;
+        }
+    </style>
 </head>
 <body>
 
-    <p id="compteur">Nombre de clics : 0</p>
+    <p id="position">Position : 0</p>
 
-    <button id="incrementer">Clique-moi</button>
-    <button id="reset">Réinitialiser</button>
+    <div class="contenu">
+        <h1>Fais défiler la page !</h1>
+        <p>Observe la position du scroll.</p>
+    </div>
 
     <script>
-        // Déclare une variable pour stocker le nombre de clics
-        let i = 0;
+        // Sélectionne l'élément qui affichera la position
+        const position = document.querySelector("#position");
 
-        // Sélection des éléments HTML
-        const cmpt = document.querySelector("#compteur");
-        const btn = document.querySelector("#incrementer");
-        const reset = document.querySelector("#reset");
+        // Écoute les événements de défilement de la page
+        window.addEventListener("scroll", function() {
 
-        // Écoute du clic sur le bouton d'incrémentation
-        btn.addEventListener("click", function() {
-
-            // Incrémente le compteur de 1
-            i = i + 1;
-
-            // Actualise le nombre affiché
-            cmpt.textContent = "Nombre de clics : " + i;
-
-        });
-
-        // Écoute du clic sur le bouton de réinitialisation
-        reset.addEventListener("click", function() {
-
-            // Remet le compteur à zéro
-            i = 0;
-
-            // Actualise l'affichage
-            cmpt.textContent = "Nombre de clics : " + i;
+            // Récupère la position verticale du défilement
+            position.textContent = window.scrollY;
 
         });
     </script>
