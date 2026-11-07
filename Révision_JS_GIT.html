@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 10</title>
+    <title>Révision JavaScript - Exercice 11</title>
+
+    <style>
+        .active {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
     <p id="message">Bonjour !</p>
 
-    <button id="modifier">Modifier le contenu</button>
+    <button id="ajouter">Ajouter la classe</button>
+    <button id="supprimer">Supprimer la classe</button>
 
     <script>
         // Sélection des éléments HTML
         const msg = document.querySelector("#message");
-        const btn = document.querySelector("#modifier");
+        const ajouter = document.querySelector("#ajouter");
+        const supprimer = document.querySelector("#supprimer");
 
-        // Écoute du clic sur le bouton
-        btn.addEventListener("click", function() {
+        // Ajoute la classe CSS au clic
+        ajouter.addEventListener("click", function() {
+            msg.classList.add("active");
+        });
 
-            // Insère du HTML : le mot Bonjour sera affiché en gras
-            msg.innerHTML = "<strong>Bonjour !</strong>";
-
+        // Supprime la classe CSS au clic
+        supprimer.addEventListener("click", function() {
+            msg.classList.remove("active");
         });
     </script>
 
