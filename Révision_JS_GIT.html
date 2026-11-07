@@ -1,33 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 25 - String includes</title>
+    <title>Exercice 26 - String slice</title>
 </head>
+
+<!-- Objectif : apprendre à extraire une partie d'une chaîne de caractères avec slice().
+
+Consignes :
+1. Déclare une constante phrase contenant : "JavaScript est vraiment intéressant".
+2. Utilise slice() pour récupérer uniquement le mot "JavaScript".
+3. Affiche le résultat dans la console.
+4. Utilise une deuxième fois slice() pour récupérer le mot "intéressant".
+Attention : slice(debut, fin) commence à l'index de début et s'arrête juste avant l'index de fin. -->
 
 <body>
 
-    <h1>Rechercher du texte avec includes()</h1>
-
-    <p id="phrase">J'apprends JavaScript et PHP avec plaisir</p>
+    <h1>Extraire du texte avec slice()</h1>
 
     <p>Ouvre la console pour voir les résultats.</p>
 
     <script>
-        const phrase = document.querySelector("#phrase");
+        const phrase = "JavaScript est vraiment intéressant"
+        console.log(phrase)
 
-        if (phrase.textContent.includes("JavaScript")) {
-            console.log("La phrase contient le mot 'JavaScript'");
-        } else {
-            console.log("La phrase ne contient pas le mot recherché");
-        }
-
-        if (phrase.textContent.includes("PHP")) {
-            console.log("La phrase contient le mot 'PHP'");
-        } else {
-            console.log("La phrase ne contient pas le mot recherché");
-        }
+        console.log(phrase.slice(0,10))
+        console.log(phrase.slice(24,36))
     </script>
 
 </body>
