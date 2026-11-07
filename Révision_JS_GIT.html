@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 14</title>
+    <title>Révision JavaScript - Exercice 15</title>
+
+    <style>
+        /* Masque l'élément HTML */
+        .cache {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-    <p id="message">Je vais disparaître !</p>
+    <p id="message" class="cache">Bonjour !</p>
 
-    <button id="supprimer">Supprimer</button>
+    <button id="afficher">Afficher le message</button>
 
     <script>
         // Sélection des éléments HTML
+        const btn = document.querySelector("#afficher");
         const msg = document.querySelector("#message");
-        const btn = document.querySelector("#supprimer");
 
         // Écoute du clic sur le bouton
         btn.addEventListener("click", function() {
 
-            // Supprime directement l'élément du DOM
-            msg.remove();
+            // Bascule la classe "cache" pour afficher ou masquer le message
+            msg.classList.toggle("cache");
 
         });
     </script>
