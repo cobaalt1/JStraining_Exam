@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 21</title>
+    <title>Révision JavaScript - Exercice 22</title>
 
     <style>
         body {
             font-family: Arial, sans-serif;
         }
 
-        #position {
+        #message {
             position: fixed;
             top: 10px;
             left: 10px;
@@ -28,24 +28,22 @@
 </head>
 <body>
 
-    <p id="position">Position : 0</p>
+    <p id="message">Tu es en haut de la page !</p>
 
     <div class="contenu">
         <h1>Fais défiler la page !</h1>
-        <p>Observe la position du scroll.</p>
+        <p>Descends de plus de 300 pixels pour déclencher le changement.</p>
     </div>
 
     <script>
-        // Sélectionne l'élément qui affichera la position
-        const position = document.querySelector("#position");
-
-        // Écoute les événements de défilement de la page
-        window.addEventListener("scroll", function() {
-
-            // Récupère la position verticale du défilement
-            position.textContent = window.scrollY;
-
-        });
+        const msg = document.querySelector("#message")
+        window.addEventListener("scroll", function(){
+            if(window.scrollY < 300){
+                msg.textContent = "Tu es en haut de la page !"
+            }else{
+                msg.textContent = "Tu as dépassé les 300 pixels !"
+            }
+        })
     </script>
 
 </body>
