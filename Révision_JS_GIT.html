@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 16</title>
+    <title>Révision JavaScript - Exercice 17</title>
 </head>
 <body>
 
-    <img id="photo" src="chat.jpg" alt="Un chat">
+    <input id="prenom" type="text" placeholder="Ton prénom">
 
-    <button id="changer">Changer la photo</button>
+    <button id="valider">Valider</button>
+
+    <p id="resultat"></p>
 
     <script>
         // Sélection des éléments HTML
-        const img = document.querySelector("#photo");
-        const btn = document.querySelector("#changer");
+        const prenom = document.querySelector("#prenom");
+        const valider = document.querySelector("#valider");
+        const resultat = document.querySelector("#resultat");
 
         // Écoute du clic sur le bouton
-        btn.addEventListener("click", function() {
+        valider.addEventListener("click", function() {
 
-            // Modifie la source de l'image
-            img.src = "chien.jpg";
+            // Récupère le prénom saisi et l'affiche dans le paragraphe
+            resultat.textContent = prenom.value;
 
         });
     </script>
