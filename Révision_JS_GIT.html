@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 23</title>
+    <title>Exercice 24 - String</title>
 </head>
+
+<!-- Objectif
+Apprendre à récupérer la longueur d'une chaîne et à modifier sa casse.
+
+Consignes :
+1. Déclare une constante phrase contenant : "JavaScript est un langage puissant".
+2. Affiche le nombre de caractères avec .length.
+3. Affiche la phrase en majuscules avec .toUpperCase().
+4. Affiche la phrase en minuscules avec .toLowerCase(). -->
+
 <body>
 
-    <h1>Parcourir un tableau avec forEach()</h1>
+    <h1>Manipulation des chaînes de caractères</h1>
 
     <p>Ouvre la console pour voir les résultats.</p>
 
     <script>
-        const tabPrenom = ["Maxence","Lucas","Thomas","Julie"]
 
-        tabPrenom.forEach(prenom => {
-            console.log(prenom)
-        });
+        const phrase = "JavaScript est un langage puissant"
+
+        console.log(phrase.length,phrase.toUpperCase(),phrase.toLowerCase())
+
     </script>
 
 </body>
