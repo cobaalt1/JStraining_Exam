@@ -3,30 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 9</title>
+    <title>Révision JavaScript - Exercice 10</title>
 </head>
 <body>
 
-    <h1 id="title">Mon titre</h1>
+    <p id="message">Bonjour !</p>
 
-    <p id="paragraphe">Voici un paragraphe.</p>
-
-    <button id="Monbouton">Modifier le contenu</button>
+    <button id="modifier">Modifier le contenu</button>
 
     <script>
         // Sélection des éléments HTML
-        const titre = document.querySelector("#title");
-        const msg = document.querySelector("#paragraphe");
-        const btn = document.querySelector("#Monbouton");
+        const msg = document.querySelector("#message");
+        const btn = document.querySelector("#modifier");
 
         // Écoute du clic sur le bouton
         btn.addEventListener("click", function() {
 
-            // Modification du texte du paragraphe
-            msg.textContent = "Le texte a été modifié !";
-
-            // Modification de la couleur du titre
-            titre.style.color = "red";
+            // Insère du HTML : le mot Bonjour sera affiché en gras
+            msg.innerHTML = "<strong>Bonjour !</strong>";
 
         });
     </script>
