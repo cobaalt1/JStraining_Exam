@@ -3,34 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 13</title>
-
-    <style>
-        .active {
-            color: green;
-            font-weight: bold;
-        }
-    </style>
+    <title>Révision JavaScript - Exercice 14</title>
 </head>
 <body>
 
-    <p id="message">Bonjour !</p>
+    <p id="message">Je vais disparaître !</p>
 
-    <button id="bouton">Modifier le message</button>
+    <button id="supprimer">Supprimer</button>
 
     <script>
         // Sélection des éléments HTML
         const msg = document.querySelector("#message");
-        const btn = document.querySelector("#bouton");
+        const btn = document.querySelector("#supprimer");
 
         // Écoute du clic sur le bouton
         btn.addEventListener("click", function() {
 
-            // Modifie le texte du paragraphe
-            msg.textContent = "Bienvenue !";
-
-            // Ajoute ou retire la classe CSS "active"
-            msg.classList.toggle("active");
+            // Supprime directement l'élément du DOM
+            msg.remove();
 
         });
     </script>
