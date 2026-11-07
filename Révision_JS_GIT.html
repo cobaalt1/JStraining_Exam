@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 17</title>
+    <title>Révision JavaScript - Exercice 18</title>
 </head>
 <body>
 
@@ -22,8 +22,13 @@
         // Écoute du clic sur le bouton
         valider.addEventListener("click", function() {
 
-            // Récupère le prénom saisi et l'affiche dans le paragraphe
-            resultat.textContent = prenom.value;
+            // Vérifie si le champ prénom est vide
+            if (prenom.value == "") {
+                resultat.textContent = "Vous devez entrer votre prénom bratan !";
+            } else {
+                // Affiche un message avec le prénom saisi
+                resultat.textContent = "Bonjour ! " + prenom.value;
+            }
 
         });
     </script>
