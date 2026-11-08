@@ -9,39 +9,28 @@
 <body>
 
     <!--
-    EXERCICE 31 - dispatchEvent()
+    EXERCICE 31 - Import et Export
 
-    Objectif : déclencher un événement click depuis JavaScript.
+    Objectif : utiliser les modules JavaScript.
 
-    1. Sélectionne le bouton avec querySelector().
-    2. Ajoute un écouteur d'événement "click".
-    3. Dans la fonction, affiche "Événement déclenché !" dans la console.
-    4. En dehors de l'écouteur, déclenche manuellement
-       un événement click sur le bouton avec dispatchEvent().
+    Dans fonctions.js :
+    1. Crée une fonction appelée saluer().
+    2. Cette fonction doit afficher "Salut Maxence !" dans la console.
+    3. Exporte cette fonction avec export.
 
-    Indice :
-    new Event("click")
-    dispatchEvent()
-    
-    Attention : tu ne dois pas cliquer manuellement sur le bouton.
-    JavaScript doit déclencher le clic tout seul !
+    Dans script.js :
+    4. Importe la fonction saluer depuis fonctions.js.
+    5. Appelle la fonction saluer().
+
+    Indices :
+    export
+    import
     -->
 
-    <h1>Déclenchement d'événement</h1>
+    <h1>Modules JavaScript</h1>
 
-    <button id="monBouton">Clique-moi !</button>
-
-    <script>
-        const btn = document.querySelector("#monBouton")
-        const click = new Event("click")
-
-        btn.addEventListener("click",function(){
-            console.log("Événement déclenché !")
-        })
-
-        setTimeout(function(){
-            btn.dispatchEvent(click);
-        }, 3000);
+    <script type="module" src="script.js">
+        
     </script>
 
 </body>
