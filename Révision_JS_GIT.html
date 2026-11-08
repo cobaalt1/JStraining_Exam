@@ -4,36 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision JavaScript - Exercice 29</title>
+    <title>Révision JavaScript - Exercice 31</title>
 </head>
 <body>
 
     <!--
-    EXERCICE 29 - preventDefault()
+    EXERCICE 31 - dispatchEvent()
 
-    1. Sélectionne le formulaire avec querySelector().
-    2. Ajoute un écouteur d'événement "submit".
-    3. Récupère l'objet event dans la fonction.
-    4. Empêche le comportement par défaut du formulaire.
-    5. Affiche "Formulaire envoyé sans rechargement !" dans la console.
+    Objectif : déclencher un événement click depuis JavaScript.
 
-    Indice : event.preventDefault()
+    1. Sélectionne le bouton avec querySelector().
+    2. Ajoute un écouteur d'événement "click".
+    3. Dans la fonction, affiche "Événement déclenché !" dans la console.
+    4. En dehors de l'écouteur, déclenche manuellement
+       un événement click sur le bouton avec dispatchEvent().
+
+    Indice :
+    new Event("click")
+    dispatchEvent()
+    
+    Attention : tu ne dois pas cliquer manuellement sur le bouton.
+    JavaScript doit déclencher le clic tout seul !
     -->
 
-    <h1>Mon formulaire</h1>
+    <h1>Déclenchement d'événement</h1>
 
-    <form id="monFormulaire">
-        <input type="text" placeholder="Ton prénom">
-        <button type="submit">Envoyer</button>
-    </form>
+    <button id="monBouton">Clique-moi !</button>
 
     <script>
-        const form = document.querySelector("#monFormulaire")
+        const btn = document.querySelector("#monBouton")
+        const click = new Event("click")
 
-        form.addEventListener("submit",function(event){
-            event.preventDefault()
-            console.log("Formulaire envoyé sans rechargement !")
+        btn.addEventListener("click",function(){
+            console.log("Événement déclenché !")
         })
+
+        setTimeout(function(){
+            btn.dispatchEvent(click);
+        }, 3000);
     </script>
 
 </body>
