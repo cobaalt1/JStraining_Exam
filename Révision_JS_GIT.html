@@ -4,36 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 28 - Event</title>
+    <title>Révision JavaScript - Exercice 29</title>
 </head>
-
-<!-- Objectif : apprendre à récupérer des informations sur un événement JavaScript.
-
-Consignes :
-1. Sélectionne le bouton avec querySelector().
-2. Ajoute un écouteur d'événement sur le clic avec addEventListener().
-3. Récupère le paramètre event dans ta fonction.
-4. Affiche event.type dans la console.
-5. Affiche event.target dans la console.
-
-Attention :
-- event.type indique le type d'événement.
-- event.target désigne l'élément qui a déclenché l'événement. -->
-
 <body>
 
-    <h1>Découvrir les événements JavaScript</h1>
+    <!--
+    EXERCICE 29 - preventDefault()
 
-    <button id="monBouton">Clique-moi !</button>
+    1. Sélectionne le formulaire avec querySelector().
+    2. Ajoute un écouteur d'événement "submit".
+    3. Récupère l'objet event dans la fonction.
+    4. Empêche le comportement par défaut du formulaire.
+    5. Affiche "Formulaire envoyé sans rechargement !" dans la console.
 
-    <p>Ouvre la console et clique sur le bouton.</p>
+    Indice : event.preventDefault()
+    -->
+
+    <h1>Mon formulaire</h1>
+
+    <form id="monFormulaire">
+        <input type="text" placeholder="Ton prénom">
+        <button type="submit">Envoyer</button>
+    </form>
 
     <script>
-        const btn = document.querySelector("#monBouton")
+        const form = document.querySelector("#monFormulaire")
 
-        btn.addEventListener("click", function(event){
-            console.log(event.type)
-            console.log(event.target)
+        form.addEventListener("submit",function(event){
+            event.preventDefault()
+            console.log("Formulaire envoyé sans rechargement !")
         })
     </script>
 
