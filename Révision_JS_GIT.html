@@ -3,56 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prépa examen - Exercice 2</title>
+    <title>Prépa examen - Exercice 3</title>
 </head>
 <body>
 
-    <h1>Vérification de saisie</h1>
+    <h1>Générer une suite de nombres</h1>
 
-    <input type="text" id="saisie" placeholder="Écris quelque chose...">
+    <button id="generer">Générer</button>
 
     <p id="resultat"></p>
 
-    <script>
-
-        const input = document.querySelector("#saisie")
-        const resultat = document.querySelector("#resultat")
-
-        input.addEventListener("input",function(){
-            if(input.value === ""){
-                resultat.textContent = "Veuillez saisir un texte"
-            }else{
-                resultat.textContent = input.value
-            }
-        });
-
-        /*
-        PRÉPA EXAMEN - EXERCICE 2
-        VÉRIFICATION D'UN CHAMP
-
+    <!--
         Objectif :
-        Afficher un message différent selon que le champ
-        de saisie est vide ou contient du texte.
-
-        Consignes :
-
-        1. Récupérer le champ de saisie avec querySelector().
-        2. Récupérer le paragraphe avec querySelector().
-        3. Ajouter un écouteur d'événement "input".
-        4. Utiliser une condition IF / ELSE :
-
-           - SI le champ est vide :
-             Afficher "Veuillez saisir un texte."
-
-           - SINON :
-             Afficher le texte saisi par l'utilisateur.
+        Au clic sur le bouton, afficher les nombres de 1 à 10
+        dans le paragraphe.
 
         Contraintes :
-        - Utiliser addEventListener().
-        - Utiliser input.value.
-        - Utiliser textContent.
-        - Ne pas utiliser onclick dans le HTML.
-        */
+        - Utiliser querySelector()
+        - Utiliser addEventListener()
+        - Utiliser une boucle for
+        - Afficher le résultat dans le paragraphe
+    -->
+
+    <script>
+        const btn = document.querySelector("#generer")
+        const resultat = document.querySelector("#resultat")
+        const nombres = [1,2,3,4,5,6,7,8,9,10]
+
+        btn.addEventListener("click",function(){
+            for(let i = 0 ; i <= 9 ; i++){
+                resultat.textContent += nombres[i]
+            }
+        });
 
     </script>
 
