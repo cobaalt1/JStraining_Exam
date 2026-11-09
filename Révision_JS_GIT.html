@@ -3,47 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 32 - setInterval</title>
+    <title>Exercice 1 - Miroir de texte</title>
 </head>
 <body>
 
-    <h1>Mon premier intervalle</h1>
+    <h1>Miroir de texte</h1>
 
-    <p id="compteur">0</p>
+    <input type="text" id="saisie" placeholder="Écris quelque chose...">
 
-    <!--
-        EXERCICE 32 - setInterval()
-
-        Objectif : apprendre à exécuter une fonction à intervalles réguliers.
-
-        Consignes :
-        1. Déclare une variable compteur initialisée à 0.
-        2. Utilise setInterval() pour exécuter une fonction toutes les secondes (1000 ms).
-        3. Incrémente compteur de 1 à chaque exécution.
-        4. Affiche la nouvelle valeur dans le paragraphe HTML ayant l'ID "compteur".
-        5. Lorsque le compteur atteint 10, arrête automatiquement l'intervalle avec clearInterval().
-
-        Contraintes :
-        - Utilise document.getElementById() pour récupérer le paragraphe.
-        - Écris tout le JavaScript toi-même.
-    -->
+    <p id="resultat"></p>
 
     <script>
 
-        let cmpt = 0;
-        const afficher = document.getElementById("compteur");
+    const input = document.querySelector("#saisie")
+    const txt = document.querySelector("#resultat")
 
-        const interval = setInterval(() => {
+    input.addEventListener("input",function(){
+        txt.textContent = input.value
+    });
 
-            if (cmpt >= 9) {
-                afficher.textContent = "Nous sommes arrivés à 10, kurwa.";
-                clearInterval(interval);
-            }else{
-            cmpt++;
-            afficher.textContent = cmpt;
-            }
+        /*
+        EXERCICE 1 - MIROIR DE TEXTE
 
-        }, 1000);
+        Objectif :
+        Afficher instantanément dans un paragraphe
+        le texte saisi par l'utilisateur.
+
+        Consignes :
+
+        1. Récupérer le champ de saisie grâce à son ID.
+        2. Récupérer le paragraphe grâce à son ID.
+        3. Détecter lorsque l'utilisateur écrit dans le champ.
+        4. Récupérer le contenu saisi par l'utilisateur.
+        5. Afficher ce contenu dans le paragraphe.
+
+        Contraintes :
+        - Utiliser un événement JavaScript adapté.
+        - Utiliser les méthodes DOM appropriées.
+        - Ne pas utiliser onclick dans le HTML.
+        */
+
     </script>
 
 </body>
