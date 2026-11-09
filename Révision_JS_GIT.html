@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercice 1 - Miroir de texte</title>
+    <title>Prépa examen - Exercice 2</title>
 </head>
 <body>
 
-    <h1>Miroir de texte</h1>
+    <h1>Vérification de saisie</h1>
 
     <input type="text" id="saisie" placeholder="Écris quelque chose...">
 
@@ -15,31 +15,42 @@
 
     <script>
 
-    const input = document.querySelector("#saisie")
-    const txt = document.querySelector("#resultat")
+        const input = document.querySelector("#saisie")
+        const resultat = document.querySelector("#resultat")
 
-    input.addEventListener("input",function(){
-        txt.textContent = input.value
-    });
+        input.addEventListener("input",function(){
+            if(input.value === ""){
+                resultat.textContent = "Veuillez saisir un texte"
+            }else{
+                resultat.textContent = input.value
+            }
+        });
 
         /*
-        EXERCICE 1 - MIROIR DE TEXTE
+        PRÉPA EXAMEN - EXERCICE 2
+        VÉRIFICATION D'UN CHAMP
 
         Objectif :
-        Afficher instantanément dans un paragraphe
-        le texte saisi par l'utilisateur.
+        Afficher un message différent selon que le champ
+        de saisie est vide ou contient du texte.
 
         Consignes :
 
-        1. Récupérer le champ de saisie grâce à son ID.
-        2. Récupérer le paragraphe grâce à son ID.
-        3. Détecter lorsque l'utilisateur écrit dans le champ.
-        4. Récupérer le contenu saisi par l'utilisateur.
-        5. Afficher ce contenu dans le paragraphe.
+        1. Récupérer le champ de saisie avec querySelector().
+        2. Récupérer le paragraphe avec querySelector().
+        3. Ajouter un écouteur d'événement "input".
+        4. Utiliser une condition IF / ELSE :
+
+           - SI le champ est vide :
+             Afficher "Veuillez saisir un texte."
+
+           - SINON :
+             Afficher le texte saisi par l'utilisateur.
 
         Contraintes :
-        - Utiliser un événement JavaScript adapté.
-        - Utiliser les méthodes DOM appropriées.
+        - Utiliser addEventListener().
+        - Utiliser input.value.
+        - Utiliser textContent.
         - Ne pas utiliser onclick dans le HTML.
         */
 
