@@ -1,54 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prépa examen - Exercice 4</title>
+    <title>Prépa examen - Exercice 5</title>
 </head>
 <body>
 
-    <h1>Calculer un prix TTC</h1>
-
-    <button id="calculer">Calculer</button>
-
-    <p id="resultat"></p>
-
     <!--
+        EXERCICE 5 - Parcourir un tableau avec forEach()
+
         Objectif :
-        Calculer le prix TTC d'un article.
+        - Créer un tableau contenant les nombres 2, 4, 6, 8 et 10.
+        - Sélectionner le bouton et le paragraphe avec querySelector().
+        - Au clic sur le bouton, parcourir le tableau avec forEach().
+        - Afficher chaque nombre dans le paragraphe.
+        - Éviter que les nombres s'accumulent lorsqu'on clique plusieurs fois.
 
-        Données :
-        - Prix HT : 100 €
-        - Taux de TVA : 21 %
-
-        Contraintes :
-        - Créer une fonction calculerTTC(prixHT, tauxTVA)
-        - Effectuer le calcul dans la fonction
-        - Utiliser return pour renvoyer le résultat
-        - Appeler la fonction au clic sur le bouton
-        - Afficher le résultat dans le paragraphe
-
-        Formule :
-        Prix TTC = Prix HT * (1 + taux TVA / 100)
+        Contrainte :
+        - Utiliser obligatoirement forEach().
     -->
 
+    <h1>Parcourir un tableau</h1>
+
+    <button id="afficher">Afficher les nombres</button>
+    <p id="resultat"></p>
+
     <script>
-        const prixHT = 699.99
-        const TVA = 21/100
-        const btn = document.querySelector("#calculer")
-        const txt = document.querySelector("#resultat")
-
-        function calculerTTC(prixHT, tauxTVA) {
-            let PriceTVA = prixHT * tauxTVA
-            let resultat = prixHT + PriceTVA
-
-            return resultat
-        }
+        const tab = [2,4,6,8,10]
+        const btn = document.querySelector("#afficher")
+        const result = document.querySelector("#resultat")
 
         btn.addEventListener("click",function(){
-            const total = calculerTTC(prixHT, TVA)
-
-            txt.textContent = total.toFixed(2) + " €"
+            result.textContent = ""
+            tab.forEach(nb => {
+            result.textContent += nb
+            });
         })
     </script>
 
