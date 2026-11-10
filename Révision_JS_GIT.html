@@ -4,41 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prépa examen - Exercice 5</title>
+    <title>Diagnostic JS - Question 1</title>
 </head>
 <body>
 
     <!--
-        EXERCICE 5 - Parcourir un tableau avec forEach()
+        DIAGNOSTIC - QUESTION 1
 
-        Objectif :
-        - Créer un tableau contenant les nombres 2, 4, 6, 8 et 10.
-        - Sélectionner le bouton et le paragraphe avec querySelector().
-        - Au clic sur le bouton, parcourir le tableau avec forEach().
-        - Afficher chaque nombre dans le paragraphe.
-        - Éviter que les nombres s'accumulent lorsqu'on clique plusieurs fois.
-
-        Contrainte :
-        - Utiliser obligatoirement forEach().
+        1. Sélectionner le champ de saisie.
+        2. Sélectionner le paragraphe résultat.
+        3. Écouter l'événement input.
+        4. Récupérer le texte saisi.
+        5. Afficher sa longueur et sa version en majuscules.
     -->
 
-    <h1>Parcourir un tableau</h1>
-
-    <button id="afficher">Afficher les nombres</button>
+    <input type="text" id="saisie" placeholder="Écris quelque chose">
     <p id="resultat"></p>
 
     <script>
-        const tab = [2,4,6,8,10]
-        const btn = document.querySelector("#afficher")
+        const saisie = document.querySelector("#saisie")
         const result = document.querySelector("#resultat")
 
-        btn.addEventListener("click",function(){
-            result.textContent = ""
-            tab.forEach(nb => {
-            result.textContent += nb
-            });
-        })
+        saisie.addEventListener("input",function(){
+            const texteMajuscule = saisie.value.toUpperCase()
+            result.textContent = saisie.value.length + " " + texteMajuscule
+        });
     </script>
-
 </body>
 </html>
