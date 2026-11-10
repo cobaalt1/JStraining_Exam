@@ -4,35 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prépa examen - 7</title>
+    <title>Prépa examen - 8</title>
 </head>
 <body>
 
     <!--
-        PRÉPA EXAMEN - 7
+        PRÉPA EXAMEN - 8
 
-        Objectif : parcourir un tableau et filtrer des valeurs.
+        Objectif : manipuler un tableau avec un événement.
 
-        1. Sélectionner le paragraphe #resultat.
-        2. Créer un tableau contenant :
-           12, 5, 28, 9, 17, 3, 42.
-        3. Parcourir le tableau avec forEach().
-        4. Vérifier si chaque nombre est pair.
-        5. Afficher uniquement les nombres pairs dans le paragraphe.
+        1. Sélectionner le bouton #generer.
+        2. Sélectionner le paragraphe #resultat.
+        3. Créer un tableau contenant :
+           4, 15, 22, 7, 30, 11.
+        4. Ajouter un événement click sur le bouton.
+        5. Au clic, parcourir le tableau avec forEach().
+        6. Afficher uniquement les nombres supérieurs à 10.
+        7. Éviter que les résultats s'accumulent à chaque clic.
     -->
 
-    <h1>Nombres pairs</h1>
+    <h1>Filtrer les nombres</h1>
+
+    <button id="generer">Afficher les nombres</button>
     <p id="resultat"></p>
 
     <script>
+        const btn = document.querySelector("#generer")
         const resultat = document.querySelector("#resultat")
-        const tab = [12, 5, 28, 9, 17, 3, 42]
+        const tab = [4, 15, 22, 7, 30, 11]
 
-        tab.forEach(number => {
-            if(number % 2 === 0){
-                resultat.textContent += number + " "
-            }
-        });
+        btn.addEventListener("click",function(){
+            resultat.textContent = ""
+            tab.forEach(number => {
+                if(number > 10){
+                    resultat.textContent += number + " "
+                }
+            });
+        })
     </script>
 
 </body>
