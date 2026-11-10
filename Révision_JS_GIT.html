@@ -4,46 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prépa examen - 9</title>
+    <title>Prépa examen - 10</title>
 </head>
 <body>
 
     <!--
-        PRÉPA EXAMEN - 9
+        PRÉPA EXAMEN - 10
 
-        Objectif : créer une fonction avec paramètres et return.
+        Objectif : créer une fonction qui calcule une moyenne.
 
         1. Sélectionner le bouton #calculer.
         2. Sélectionner le paragraphe #resultat.
-        3. Créer une fonction appelée calculerPrix.
-        4. Cette fonction reçoit deux paramètres :
-           prixHT et tauxTVA.
-        5. Calculer le prix TTC.
-        6. Retourner le résultat avec return.
-        7. Au clic sur le bouton, appeler la fonction
-           avec les valeurs 100 et 0.21.
-        8. Afficher le résultat dans le paragraphe.
+        3. Créer une fonction calculerMoyenne qui reçoit
+           trois paramètres : note1, note2 et note3.
+        4. Calculer la moyenne des trois notes.
+        5. Retourner le résultat avec return.
+        6. Au clic sur le bouton, appeler la fonction
+           avec les valeurs 12, 15 et 18.
+        7. Afficher la moyenne dans le paragraphe,
+           avec deux décimales.
+
+        Attention : ne pas effectuer le calcul directement
+        dans l'événement click. Utiliser la fonction.
     -->
 
-    <h1>Calcul du prix TTC</h1>
+    <h1>Calcul de moyenne</h1>
 
-    <button id="calculer">Calculer</button>
+    <button id="calculer">Calculer la moyenne</button>
     <p id="resultat"></p>
 
     <script>
         const btn = document.querySelector("#calculer")
-        const resultat = document.querySelector("#resultat")
+        const result = document.querySelector("#resultat")
 
-        function calculerPrix(prixHT, tauxTVA) {
-            const prixTTC = prixHT * (1 + tauxTVA)
-            return prixTTC
+        function Moyenne(note1,note2,note3){
+            const moyenne = (note1 + note2 + note3) / 3
+
+            return moyenne
         }
 
         btn.addEventListener("click",function(){
-            const PrixTTC = calculerPrix(200, 0.10)
-            resultat.textContent = PrixTTC.toFixed(2) + " €"
-        })
+            total = Moyenne(12,15,18)
 
+            result.textContent = total
+        })
     </script>
 
 </body>
