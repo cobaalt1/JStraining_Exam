@@ -4,43 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prépa examen - 8</title>
+    <title>Prépa examen - 9</title>
 </head>
 <body>
 
     <!--
-        PRÉPA EXAMEN - 8
+        PRÉPA EXAMEN - 9
 
-        Objectif : manipuler un tableau avec un événement.
+        Objectif : créer une fonction avec paramètres et return.
 
-        1. Sélectionner le bouton #generer.
+        1. Sélectionner le bouton #calculer.
         2. Sélectionner le paragraphe #resultat.
-        3. Créer un tableau contenant :
-           4, 15, 22, 7, 30, 11.
-        4. Ajouter un événement click sur le bouton.
-        5. Au clic, parcourir le tableau avec forEach().
-        6. Afficher uniquement les nombres supérieurs à 10.
-        7. Éviter que les résultats s'accumulent à chaque clic.
+        3. Créer une fonction appelée calculerPrix.
+        4. Cette fonction reçoit deux paramètres :
+           prixHT et tauxTVA.
+        5. Calculer le prix TTC.
+        6. Retourner le résultat avec return.
+        7. Au clic sur le bouton, appeler la fonction
+           avec les valeurs 100 et 0.21.
+        8. Afficher le résultat dans le paragraphe.
     -->
 
-    <h1>Filtrer les nombres</h1>
+    <h1>Calcul du prix TTC</h1>
 
-    <button id="generer">Afficher les nombres</button>
+    <button id="calculer">Calculer</button>
     <p id="resultat"></p>
 
     <script>
-        const btn = document.querySelector("#generer")
+        const btn = document.querySelector("#calculer")
         const resultat = document.querySelector("#resultat")
-        const tab = [4, 15, 22, 7, 30, 11]
+
+        calculerPrix = function(prixHT,tauxTVA){
+            const prixTTC = prixHT * (1 + tauxTVA)
+            return prixTTC
+        }
 
         btn.addEventListener("click",function(){
-            resultat.textContent = ""
-            tab.forEach(number => {
-                if(number > 10){
-                    resultat.textContent += number + " "
-                }
-            });
+            const PrixTTC = calculerPrix(100, 0.21)
+            resultat.textContent = PrixTTC
         })
+
     </script>
 
 </body>
