@@ -4,31 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnostic JS - Question 1</title>
+    <title>Prépa examen - 7</title>
 </head>
 <body>
 
     <!--
-        DIAGNOSTIC - QUESTION 1
+        PRÉPA EXAMEN - 7
 
-        1. Sélectionner le champ de saisie.
-        2. Sélectionner le paragraphe résultat.
-        3. Écouter l'événement input.
-        4. Récupérer le texte saisi.
-        5. Afficher sa longueur et sa version en majuscules.
+        Objectif : parcourir un tableau et filtrer des valeurs.
+
+        1. Sélectionner le paragraphe #resultat.
+        2. Créer un tableau contenant :
+           12, 5, 28, 9, 17, 3, 42.
+        3. Parcourir le tableau avec forEach().
+        4. Vérifier si chaque nombre est pair.
+        5. Afficher uniquement les nombres pairs dans le paragraphe.
     -->
 
-    <input type="text" id="saisie" placeholder="Écris quelque chose">
+    <h1>Nombres pairs</h1>
     <p id="resultat"></p>
 
     <script>
-        const saisie = document.querySelector("#saisie")
-        const result = document.querySelector("#resultat")
+        const resultat = document.querySelector("#resultat")
+        const tab = [12, 5, 28, 9, 17, 3, 42]
 
-        saisie.addEventListener("input",function(){
-            const texteMajuscule = saisie.value.toUpperCase()
-            result.textContent = saisie.value.length + " " + texteMajuscule
+        tab.forEach(number => {
+            if(number % 2 === 0){
+                resultat.textContent += number + " "
+            }
         });
     </script>
+
 </body>
 </html>
