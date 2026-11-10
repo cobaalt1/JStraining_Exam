@@ -34,14 +34,14 @@
         const btn = document.querySelector("#calculer")
         const resultat = document.querySelector("#resultat")
 
-        calculerPrix = function(prixHT,tauxTVA){
+        function calculerPrix(prixHT, tauxTVA) {
             const prixTTC = prixHT * (1 + tauxTVA)
             return prixTTC
         }
 
         btn.addEventListener("click",function(){
-            const PrixTTC = calculerPrix(100, 0.21)
-            resultat.textContent = PrixTTC
+            const PrixTTC = calculerPrix(200, 0.10)
+            resultat.textContent = PrixTTC.toFixed(2) + " €"
         })
 
     </script>
