@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compteur interactif</title>
+    <title>Comprendre les événements</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,86 +13,59 @@
             padding: 50px;
         }
 
-        #compteur {
-            font-size: 50px;
-            margin: 30px;
-        }
-
         button {
             padding: 15px 25px;
+            margin: 10px;
             cursor: pointer;
         }
 
-        .positif {
-            color: green;
-        }
-
-        .negatif {
-            color: red;
+        #resultat {
+            margin-top: 30px;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Mon compteur</h1>
+    <h1>Comprendre les événements</h1>
 
-    <div id="compteur">0</div>
+    <button id="bouton1" class="btn">Bouton 1</button>
+    <button id="bouton2" class="btn">Bouton 2</button>
+    <button id="bouton3" class="btn">Bouton 3</button>
 
-    <button id="moins">-</button>
-    <button id="reset">Reset</button>
-    <button id="plus">+</button>
+    <p id="resultat">Clique sur un bouton.</p>
 
     <script>
         /*
-            EXERCICE 28 - COMPTEUR INTERACTIF
+            EXERCICE 34 - COMPRENDRE L'OBJET EVENT
 
-            1. Récupérer les trois boutons.
-            2. Récupérer le compteur.
-            3. Créer une variable qui commence à 0.
-            4. Au clic sur +, augmenter de 1.
-            5. Au clic sur -, diminuer de 1.
-            6. Au clic sur Reset, remettre à 0.
-            7. Afficher la valeur dans le DOM.
-            8. Si la valeur est positive, ajouter la classe positif.
-            9. Si elle est négative, ajouter la classe negatif.
-            10. Si elle vaut 0, retirer les deux classes.
+            1. Récupérer tous les boutons.
+            2. Récupérer le paragraphe resultat.
+            3. Parcourir les boutons avec forEach().
+            4. Ajouter un événement "click" sur chaque bouton.
+            5. Récupérer le paramètre event dans la fonction.
+            6. Afficher dans le paragraphe :
+               - Le type d'événement déclenché.
+               - L'identifiant du bouton cliqué.
+
+            ATTENTION :
+            - event est un objet.
+            - event.type est une propriété.
+            - event.target est l'élément qui a déclenché l'événement.
         */
 
-        let btnMoins = document.querySelector("#moins")
-        let btnReset = document.querySelector("#reset")
-        let btnPlus = document.querySelector("#plus")
-        let affichage = document.querySelector("#compteur")
-        let cmpt = 0
+        let btn = document.querySelectorAll(".btn")
+        let result = document.querySelector("#resultat")
 
-        btnMoins.addEventListener("click",function(){
-            cmpt = cmpt - 1
-            actualiserCompteur()
-        })
-
-        btnReset.addEventListener("click",function(){
-            cmpt = 0
-            actualiserCompteur()
-        })
-
-        btnPlus.addEventListener("click",function(){
-            cmpt = cmpt +1
-            actualiserCompteur()
-        })
-
-        function actualiserCompteur(){
-            affichage.textContent = cmpt
-
-            if(cmpt > 0){
-                affichage.classList.add("positif")
-                affichage.classList.remove("negatif")
-            }else if(cmpt < 0){
-                affichage.classList.add("negatif");
-                affichage.classList.remove("positif");
-            }else{
-                affichage.classList.remove("negatif");
-                affichage.classList.remove("positif");
-            }
-        }
+        btn.forEach(item => {
+            item.addEventListener("click",function(event){
+                result.textContent = [
+                    event.type,
+                    event.target,
+                    event.target.id
+                ]
+            })
+        });
 
     </script>
 
