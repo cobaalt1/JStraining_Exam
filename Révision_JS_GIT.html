@@ -4,50 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prépa examen - 10</title>
+    <title>Compteur interactif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #compteur {
+            font-size: 50px;
+            margin: 30px;
+        }
+
+        button {
+            padding: 15px 25px;
+            cursor: pointer;
+        }
+
+        .positif {
+            color: green;
+        }
+
+        .negatif {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
-    <!--
-        PRÉPA EXAMEN - 10
+    <h1>Mon compteur</h1>
 
-        Objectif : créer une fonction qui calcule une moyenne.
+    <div id="compteur">0</div>
 
-        1. Sélectionner le bouton #calculer.
-        2. Sélectionner le paragraphe #resultat.
-        3. Créer une fonction calculerMoyenne qui reçoit
-           trois paramètres : note1, note2 et note3.
-        4. Calculer la moyenne des trois notes.
-        5. Retourner le résultat avec return.
-        6. Au clic sur le bouton, appeler la fonction
-           avec les valeurs 12, 15 et 18.
-        7. Afficher la moyenne dans le paragraphe,
-           avec deux décimales.
-
-        Attention : ne pas effectuer le calcul directement
-        dans l'événement click. Utiliser la fonction.
-    -->
-
-    <h1>Calcul de moyenne</h1>
-
-    <button id="calculer">Calculer la moyenne</button>
-    <p id="resultat"></p>
+    <button id="moins">-</button>
+    <button id="reset">Reset</button>
+    <button id="plus">+</button>
 
     <script>
-        const btn = document.querySelector("#calculer")
-        const result = document.querySelector("#resultat")
+        /*
+            EXERCICE 28 - COMPTEUR INTERACTIF
 
-        function Moyenne(note1,note2,note3){
-            const moyenne = (note1 + note2 + note3) / 3
+            1. Récupérer les trois boutons.
+            2. Récupérer le compteur.
+            3. Créer une variable qui commence à 0.
+            4. Au clic sur +, augmenter de 1.
+            5. Au clic sur -, diminuer de 1.
+            6. Au clic sur Reset, remettre à 0.
+            7. Afficher la valeur dans le DOM.
+            8. Si la valeur est positive, ajouter la classe positif.
+            9. Si elle est négative, ajouter la classe negatif.
+            10. Si elle vaut 0, retirer les deux classes.
+        */
 
-            return moyenne
+        let btnMoins = document.querySelector("#moins")
+        let btnReset = document.querySelector("#reset")
+        let btnPlus = document.querySelector("#plus")
+        let affichage = document.querySelector("#compteur")
+        let cmpt = 0
+
+        btnMoins.addEventListener("click",function(){
+            cmpt = cmpt - 1
+            actualiserCompteur()
+        })
+
+        btnReset.addEventListener("click",function(){
+            cmpt = 0
+            actualiserCompteur()
+        })
+
+        btnPlus.addEventListener("click",function(){
+            cmpt = cmpt +1
+            actualiserCompteur()
+        })
+
+        function actualiserCompteur(){
+            affichage.textContent = cmpt
+
+            if(cmpt > 0){
+                affichage.classList.add("positif")
+                affichage.classList.remove("negatif")
+            }else if(cmpt < 0){
+                affichage.classList.add("negatif");
+                affichage.classList.remove("positif");
+            }else{
+                affichage.classList.remove("negatif");
+                affichage.classList.remove("positif");
+            }
         }
 
-        btn.addEventListener("click",function(){
-            total = Moyenne(12,15,18)
-
-            result.textContent = total
-        })
     </script>
 
 </body>
